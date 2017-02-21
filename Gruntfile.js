@@ -72,9 +72,9 @@ module.exports = function(grunt) {
 			//the proxies setting to determine which services to act on.
 			//When not using grunt-connect-proxy you still must have the
 			//livereload target for connect.
-			//
+			
 			proxies: {
-				context: "/Northwind",  // When the url contains this...
+				context: "/proxy",  // When the url contains this...
 				host: "services.odata.org", // Proxy to this host
 				changeOrigin: true
 				//port: 80 //,
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 				//	"^/odata": ""
 				//"^/changingcontext": "/anothercontext"
 				//}
-			},
+			},/*
 			//=====================================================================
 			*/
 
