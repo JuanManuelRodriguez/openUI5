@@ -41,8 +41,12 @@
     	  "libs": {
     		    "sap.m": {}
     	  }
-  	   },
-    	 "models": {
+  	  },
+      "contentDensities": {
+        "compact": true,
+        "cozy": true
+      },
+    	"models": {
     	   "i18n": {
       	 	 "type": "sap.ui.model.resource.ResourceModel",
       	 	 "settings": {
@@ -53,6 +57,35 @@
            "dataSource": "invoiceRemote"
          }
   	   },
+       "routing": {
+      	  "config": {
+        		"routerClass": "sap.m.routing.Router",
+        		"viewType": "XML",
+        		"viewPath": "sap.ui.demo.wt.view",
+        		"controlId": "app",
+        		"controlAggregation": "pages"
+      	  },
+      	  "routes": [
+          		{
+          		  "pattern": "",
+          		  "name": "overview",
+          		  "target": "overview"
+          		},
+          		{
+          		  "pattern": "detail/{invoicePath}",
+          		  "name": "detail",
+          		  "target": "detail"
+          		}
+      	  ],
+      	  "targets": {
+        		"overview": {
+        		  "viewName": "Overview"
+        		},
+        		"detail": {
+        		  "viewName": "Detail"
+        		}
+      	  }
+       },
        "resources":{
          "css":[
            {
